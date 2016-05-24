@@ -43,9 +43,9 @@
                                 <argument>-F</argument>
                                 <argument>action=login</argument>
                                 <argument>-F</argument>
-                                <argument>userName=amalka.wso2.com@amalka</argument>
+                                <argument>userName=${appcloud.username}</argument>
                                 <argument>-F</argument>
-                                <argument>password=password</argument>
+                                <argument>password=${appcloud.password}</argument>
                                 <argument>https://newapps.cloud.wso2.com/appmgt/site/blocks/user/login/ajax/login.jag</argument>
                             </arguments>
                         </configuration>
@@ -112,5 +112,7 @@
     <properties>
         <deploy.version>1.0</deploy.version>
         <build.number>0</build.number>
+        <appcloud.password>password</appcloud.password>
+        <appcloud.username>username</appcloud.username>
     </properties>
 </project>
