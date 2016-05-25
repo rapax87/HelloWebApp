@@ -18,7 +18,6 @@
     </dependencies>
 
     <build>
-        <finalName>HelloWebApp-${deploy.version}.${build.number}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -69,9 +68,9 @@
                                 <argument>-F</argument>
                                 <argument>action=createApplication</argument>
                                 <argument>-F</argument>
-                                <argument>applicationName=${artifactId}${build.number}</argument>
+                                <argument>applicationName=${project.artifactId}</argument>
                                 <argument>-F</argument>
-                                <argument>applicationDescription=${artifactId}${build.number}_Sample</argument>
+                                <argument>applicationDescription=${project.artifactId}_${project.version}_${build.number}</argument>
                                 <argument>-F</argument>
                                 <argument>conSpecMemory=512</argument>
                                 <argument>-F</argument>
@@ -83,17 +82,17 @@
                                 <argument>-F</argument>
                                 <argument>applicationRevision=${deploy.version}.${build.number}</argument>
                                 <argument>-F</argument>
-                                <argument>uploadedFileName=${artifactId}-${deploy.version}.${build.number}.war</argument>
+                                <argument>uploadedFileName=${project.artifactId}-${project.version}.war</argument>
                                 <argument>-F</argument>
                                 <argument>runtimeProperties=[]</argument>
                                 <argument>-F</argument>
-                                <argument>tags=[]</argument>
+                                <argument>tags=[{"key":"BUILD_NUMBER","value":"${build.number}}"}, {"key":"BUILD_TIME","value":"${build.id}}"}]</argument>
                                 <argument>-F</argument>
-                                <argument>fileupload=@${project.build.directory}/${artifactId}-${deploy.version}.${build.number}.war</argument>
+                                <argument>fileupload=@${project.build.directory}/${project.artifactId}-${project.version}.war</argument>
                                 <argument>-F</argument>
                                 <argument>isFileAttached=true</argument>
                                 <argument>-F</argument>
-                                <argument>isNewVersion=false</argument>
+                                <argument>isNewVersion=true</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -112,6 +111,7 @@
     <properties>
         <deploy.version>1.0</deploy.version>
         <build.number>0</build.number>
+        <build.id>0</build.id>
         <appcloud.password>password</appcloud.password>
         <appcloud.username>username</appcloud.username>
     </properties>
