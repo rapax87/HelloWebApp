@@ -86,7 +86,7 @@
                                 <argument>-F</argument>
                                 <argument>runtimeProperties=[]</argument>
                                 <argument>-F</argument>
-                                <argument>tags=[{"key":"BUILD_NUMBER","value":"${build.number}}"}, {"key":"BUILD_TIME","value":"${build.id}}"}]</argument>
+                                <argument>tags=[{"key":"BUILD_NUMBER","value":"${build.number}"}]</argument>
                                 <argument>-F</argument>
                                 <argument>fileupload=@${project.build.directory}/${project.artifactId}-${project.version}.war</argument>
                                 <argument>-F</argument>
