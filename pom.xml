@@ -98,6 +98,8 @@
                             <argument>isFileAttached=true</argument>
                             <argument>-F</argument>
                             <argument>isNewVersion=true</argument>
+                            <argument>-F</argument>
+                            <argument>appCreationMethod=default</argument>
                         </arguments>
                     </configuration>
                 </execution>
